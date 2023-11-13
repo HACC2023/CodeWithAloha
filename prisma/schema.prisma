@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ReportDebris {
+  id              Int     @id @default(autoincrement())
+  address         String?
+  latitude        String?
+  longitude       String?
+  date            String?
+  debrisType      String?
+  containerStatus String?
+  biofouling String?
+  description String?
+  island String?
+  email String?
+  phone String?
+  captcha String?
+  status String?
+  removalCompany String?
+  images String?
+  debrisApproxSize String?
+  environmentalDamage String?
+}
+
+model EventDetection {
+  id                  Int     @id @default(autoincrement())
+  detectionDate       String?
+  detectionLocation   String?
+  environmentalDamage String?
+  debrisType          String?
+  debrisApproxSize    String?
+}
+
+model EventRemovalTempStorage {
+  id                  Int      @id @default(autoincrement())
+  removalOrganization String
+  removalDate         DateTime
+  removalLocation     String
+  environmentalDamage String
+  debrisType          String
+  debrisSizeMass      String
+  storageLocation     String
+}
+
+model MultiEventTransport {
+  id                      Int      @id @default(autoincrement())
+  shipmentDate            DateTime
+  shipmentFromToLocations String
+  totalDebrisSizeMass     String
+  eventID                 String
+}
+
+model EventSorting {
+  id                Int    @id @default(autoincrement())
+  eventID           String
+  eventType         String
+  eventMass         String
+  // float or net
+  componentTypes    String
+  componentMasses   String
+  componentPolymers String
+}
+
+model ComponentDisposing {
+  id                                    Int      @id @default(autoincrement())
+  disposalMassByComponentTypeAndPolymer String
+  disposalDate                          DateTime
+  disposalMechanism                     String
+}

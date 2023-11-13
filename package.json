@@ -1,0 +1,46 @@
+{
+  "name": "ocean-watch",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "npx prettier . --write"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "@react-google-maps/api": "^2.19.2",
+    "bootstrap": "^5.3.2",
+    "dotenv": "^16.3.1",
+    "google-map-react": "^2.2.1",
+    "google-maps-react-markers": "^2.0.6",
+    "next": "13.5.6",
+    "next-auth": "^4.24.5",
+    "react": "^18",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0",
+    "react-icons": "^4.11.0",
+    "recharts": "^2.9.3",
+    "styled-components": "^6.1.1",
+    "twilio": "^4.19.0"
+  },
+  "devDependencies": {
+    "@types/google-map-react": "^2.1.10",
+    "@types/json5": "^2.2.0",
+    "@types/node": "^20",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18",
+    "@types/react-google-recaptcha": "^2.1.8",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
+    "postcss": "^8",
+    "prettier": "3.0.3",
+    "prisma": "^5.5.2",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  }
+}
