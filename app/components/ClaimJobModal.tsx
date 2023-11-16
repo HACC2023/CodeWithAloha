@@ -42,10 +42,6 @@ function ClaimJobModal({ onSubmit, onClose, job }: ClaimJobModalProps) {
       if (response.ok) {
         setSuccessMessage("Task claimed successfully!");
         console.log("JOB CLAIMED SUCCESS");
-        setTimeout(() => {
-          onClose();
-          setIsSubmitting(false);
-        }, 3000);
       } else {
         // Handle errors, display an error message
         setIsSubmitting(false);
