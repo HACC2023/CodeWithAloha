@@ -79,16 +79,16 @@ export default function ClaimedJobsPage() {
     <>
       <section
         className="flex flex-col items-center 
-      justify-center custom-background"
+      justify-center custom-background min-h-screen h-fit"
       >
         <Navbar />
         <h1
-          className="text-md md:text-2xl xl:text-4xl font-extrabold text-white text-center 
-        lg:text-left pb-8"
+          className="text-md text-4xl font-extrabold text-white text-center 
+        lg:text-left pb-8 mt-24"
         >
           Claimed Jobs Available
         </h1>
-        <div className=" md:mr-12 mb-4 flex flex-row items-center justify-center gap-1">
+        <div className=" md:mr-12 my-8 mb-12 flex flex-row items-center justify-center gap-1">
           <label
             className="text-black px-4 flex flex-row items-center justify-center gap-1"
             htmlFor="island"
@@ -127,7 +127,7 @@ export default function ClaimedJobsPage() {
 
         {jobs.filter((j) => j.status === "claimed" && filterByIsland(j))
           .length === 0 && (
-          <div className="h-[400px] text-sm text-center text-white flex flex-col-reverse gap-8 items-center justify-center">
+          <div className="h-[800px] text-sm text-center text-white flex flex-col-reverse gap-8 items-center justify-center">
             No claimed jobs available for the selected island.
             <img src="/assets/map.png" alt="Hawaii map" className="h-24" />
           </div>
@@ -135,8 +135,8 @@ export default function ClaimedJobsPage() {
         {/* ______________claimed tasks________________ */}
         {removalCompleteJobs.length > 0 && (
           <>
-            <div className="h-[1px] w-1/2 bg-white/20 my-4 mt-8"></div>
-            <h2 className="text-md md:text-xl xl:text-2xl font-extrabold text-white text-center lg:text-left pb-8">
+            <div className="h-[1px] w-1/2 bg-white/20 my-4 mt-24 mb-12"></div>
+            <h2 className="text-2xl md:text-xl mb-12 xl:text-2xl font-extrabold text-white text-center lg:text-left pb-8">
               Removal Complete and Pending Processing
             </h2>
 
