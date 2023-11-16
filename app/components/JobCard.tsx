@@ -99,7 +99,7 @@ function JobCard({
       <div className="flex flex-row items-start justify-start gap-1">
         <p className="text-black flex flex-row items-center justify-start gap-1">
           <MdGpsFixed className=" text-slate-500 " />
-          <span className="font-semibold">Coords</span>
+          <span className="font-semibold">Coords </span>
         </p>
         <div className="flex flex-row xl:flex-row items-start justify-start gap-1">
           <p>
