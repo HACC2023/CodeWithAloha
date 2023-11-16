@@ -21,6 +21,9 @@ interface RemovalJobs {
   captcha: string;
   status: string;
   images: string;
+  removalCompany?: string;
+  removalDate?: string;
+  claimDate?: string;
 }
 
 export default function RemovalJobsPage() {
@@ -28,8 +31,6 @@ export default function RemovalJobsPage() {
   const [jobSelected, setJobSelected] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedIsland, setSelectedIsland] = useState<string>("");
-  const [claimingCompany, setClaimingCompany] = useState<string>("");
-  const [claimDate, setClaimDate] = useState<string>("");
 
   const getRemovalJobs = async () => {
     try {
@@ -156,9 +157,9 @@ export default function RemovalJobsPage() {
                   key={index}
                   claimedJob={claimedJob}
                   onClick={handleOnClick}
-                  claimingCompany={claimingCompany}
                   status={"Pending"}
-                  lastUpdateDate={claimDate}
+                  lastUpdateDate={claimedJob.claimDate ?? ""}
+                  claimingCompany={claimedJob.removalCompany ?? ""}
                 />
               ))}
             </div>

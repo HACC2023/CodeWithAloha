@@ -22,6 +22,9 @@ interface ClaimedJobs {
   captcha: string;
   status: string;
   images: string;
+  removalCompany: string;
+  removalDate?: string;
+  claimDate?: string;
 }
 
 export default function ClaimedJobsPage() {
@@ -29,8 +32,6 @@ export default function ClaimedJobsPage() {
   const [jobSelected, setJobSelected] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedIsland, setSelectedIsland] = useState<string>("");
-  const [claimingCompany, setClaimingCompany] = useState<string>("");
-  const [removalDate, setRemovalDate] = useState<string>("");
 
   const getClaimedJobs = async () => {
     try {
@@ -121,6 +122,7 @@ export default function ClaimedJobsPage() {
                 setJobSelected={setJobSelected}
                 setIsModalOpen={setIsModalOpen}
                 btnMessage="Removal Complete"
+                removalCompany={job.removalCompany}
               />
             ))}
         </div>
@@ -146,9 +148,9 @@ export default function ClaimedJobsPage() {
                   key={index}
                   claimedJob={claimedJob}
                   onClick={handleOnClick}
-                  claimingCompany={claimingCompany}
+                  claimingCompany={claimedJob.removalCompany}
                   status={"Removed"}
-                  lastUpdateDate={removalDate}
+                  lastUpdateDate={claimedJob.removalDate ?? ""}
                 />
               ))}
             </div>

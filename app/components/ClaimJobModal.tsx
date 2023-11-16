@@ -32,6 +32,7 @@ function ClaimJobModal({ onSubmit, onClose, job }: ClaimJobModalProps) {
     form.append("id", job.split("-")[1]);
     form.append("status", "claimed");
     form.append("removalCompany", removalCompany);
+    form.append("claimDate", new Date(Date.now()).toDateString());
 
     try {
       const response = await fetch("/api/report", {

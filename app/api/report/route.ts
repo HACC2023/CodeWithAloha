@@ -14,6 +14,8 @@ export async function PATCH(req: Request) {
   const removalCompany = formData.get('removalCompany')?.toString();
   const debrisApproxSize = formData.get('debrisApproxSize')?.toString();
   const environmentalDamage = formData.get('environmentalDamage')?.toString();
+  const claimDate = formData.get('claimDate')?.toString();
+  const removalDate = formData.get('removalDate')?.toString();
 
   const dataToAdd: any = {}
   if(status){
@@ -27,6 +29,12 @@ export async function PATCH(req: Request) {
   }
   if(environmentalDamage) {
     dataToAdd.environmentalDamage = environmentalDamage
+  }
+  if(claimDate) {
+    dataToAdd.claimDate = claimDate
+  }
+  if(removalDate) {
+    dataToAdd.removalDate = removalDate
   }
 
   const result = prisma.reportDebris.update({
