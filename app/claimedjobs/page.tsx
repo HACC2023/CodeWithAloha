@@ -103,7 +103,7 @@ export default function ClaimedJobsPage() {
             <option value="">All Islands</option>
             <option value="Oahu">Oahu</option>
             <option value="Big Island">Big Island</option>
-            <option value="Mauai">Mauai</option>
+            <option value="Maui">Maui</option>
             <option value="Kauai">Kauai</option>
             <option value="Lanai">Lanai</option>
             <option value="Molokai">Molokai</option>

@@ -69,7 +69,7 @@ const ClaimedJobCard: React.FC<ClaimedJobCardProps> = ({
           ) : (
             <img src="/assets/done.png" alt="done status" className="h-6" />
           )}
-       
+
           <p className="font-bold">{status}</p>
         </div>
       </div>
@@ -121,24 +121,29 @@ const ClaimedJobCard: React.FC<ClaimedJobCardProps> = ({
         </p>
 
         <div className="flex flex-row items-center justify-start gap-2 ">
-          {claimedJob.images.split("-----").map((image, index) => (
-            <div key={index} className="flex flex-row items-end gap-4">
-              <span
-                style={{
-                  cursor: "pointer",
-                }}
-              >
-                <img
-                  src={image}
-                  alt="Image Preview"
-                  style={{ maxHeight: "100px" }}
-                  className="h-auto"
-                />
-              </span>
-            </div>
-          ))}
+          {claimedJob.images ? (
+            claimedJob.images.split("-----").map((image, index) => (
+              <div key={index} className="flex flex-row items-end gap-4">
+                <span
+                  style={{
+                    cursor: "pointer",
+                  }}
+                >
+                  <img
+                    src={image}
+                    alt="Image Preview"
+                    style={{ maxHeight: "100px" }}
+                    className="h-auto rounded-sm shadow-md mt-6"
+                  />
+                </span>
+              </div>
+            ))
+          ) : (
+            <p className="text-slate-600 italic text-sm pt-2">
+              No images provided
+            </p>
+          )}
         </div>
-        <br />
 
         <p
           className={` h-[30px]

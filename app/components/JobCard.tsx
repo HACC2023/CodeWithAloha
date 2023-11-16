@@ -69,7 +69,7 @@ function JobCard({
     >
       <div className="w-full flex flex-row items-between justify-between">
         <div className="flex flex-row items-center gap-2">
-          {(btnMessage === "Removal Complete") ? (
+          {btnMessage === "Removal Complete" ? (
             <img src="/assets/check.png" alt="New" className="h-8" />
           ) : (
             <img src="/assets/new2.png" alt="New" className="h-12" />
@@ -129,27 +129,29 @@ function JobCard({
       </p> */}
 
       <div className="flex flex-row items-center justify-start gap-2 ">
-        {data.images.split("-----").map((image, index) => (
-          <div key={index} className="flex flex-row items-end gap-4">
-            <span
-              style={{
-                cursor: "pointer",
-              }}
-            >
-              <img
-                src={image}
-                // src="/assets/example-1.png"
-                alt="Image Preview"
-                style={{ maxHeight: "160px" }}
-                className="h-auto rounded-sm shadow-md mt-6"
-              />
-            </span>
-          </div>
-        ))}
+        {data.images ? (
+          data.images.split("-----").map((image, index) => (
+            <div key={index} className="flex flex-row items-end gap-4">
+              <span
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                <img
+                  src={image}
+                  alt="Image Preview"
+                  style={{ maxHeight: "160px" }}
+                  className="h-auto rounded-sm shadow-md mt-6"
+                />
+              </span>
+            </div>
+          ))
+        ) : (
+          <p className="text-slate-600 italic text-sm py-2">No images provided</p>
+        )}
       </div>
-      <br />
-
-      <p
+     
+           <p
         className={`border bg-white shadow-sm h-fit 
                     min-h-[100px] p-2 text-slate-500 min-w-[260px] w-80 md:w-[600px]`}
       >
@@ -158,18 +160,18 @@ function JobCard({
 
       <div className="h-[1px] w-full bg-slate-200 my-2"> </div>
 
-  {(btnMessage !== "Removal Complete") && (
-      <div>
-        <p className="text-slate-600 text-[.8rem] flex flex-row items-center justify-center gap-1">
-          <AiOutlineMail /> {data.email}
-        </p>
-        <p className="text-slate-600 text-[.8rem] flex flex-row items-center justify-center gap-1">
-          <AiOutlinePhone /> {data.phone}
-        </p>
-      </div>
-  )}
+      {btnMessage !== "Removal Complete" && (
+        <div>
+          <p className="text-slate-600 text-[.8rem] flex flex-row items-center justify-center gap-1">
+            <AiOutlineMail /> {data.email}
+          </p>
+          <p className="text-slate-600 text-[.8rem] flex flex-row items-center justify-start gap-1">
+            <AiOutlinePhone /> {data.phone}
+          </p>
+        </div>
+      )}
 
-      {(btnMessage === "Removal Complete") && (
+      {btnMessage === "Removal Complete" && (
         <div className="w-full">
           <div className="flex flex-col items-start py-4">
             <p className="font-semibold">Observer&apos;s contact info</p>
