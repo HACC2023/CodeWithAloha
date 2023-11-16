@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
             hover:font-bold transition-all ease-in text-sm
          "
             >
-              Report
+            Form
             </a>
           </li>
           {/* Conditional Login Links */}
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
                 href="/removaljobs"
                 className="text-white hover:shadow-lg pb-2 hover:font-bold transition-all ease-in text-sm"
               >
-                Removal
+                Reports
               </a>
             </li>
           )}
@@ -147,7 +147,7 @@ const Navbar: React.FC = () => {
                 href="/claimedjobs"
                 className="text-white hover:shadow-lg pb-2 hover:font-bold transition-all ease-in text-sm"
               >
-                Claim
+                Claimed
               </a>
             </li>
           )}

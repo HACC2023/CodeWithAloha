@@ -40,13 +40,13 @@ export default function LoginPage() {
       <Navbar />
       <div
         className="absolute h-full top-0 left-0 bottom-0 w-full -z-10
-        custom-background"
+        custom-background "
       >
         <div className="custom-clip-path h-screen w-screen bg-white/10"></div>
       </div>
-      <div className="container mx-auto p-8 flex justify-center items-start min-h-screen">
-        <div className="max-w-md w-full bg-white p-6 rounded shadow-md">
-          <h1 className="text-center text-2xl mb-4 text-black">Login</h1>
+      <div className="container mx-auto p-8 flex justify-center items-start min-h-screen mt-36">
+        <div className="max-w-md w-full bg-white p-6 rounded shadow-xl pb-8">
+          <h1 className="text-center text-4xl font-semibold my-8 text-black">Login</h1>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="mb-4">
               <label

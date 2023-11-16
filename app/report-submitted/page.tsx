@@ -33,8 +33,8 @@ export default function ReportSubmitted() {
   }, []);
   return (
     <section>
-      <Navbar />
-      <main className="bg-cover bg-no-repeat flex flex-col items-center ">
+      {/* <Navbar /> */}
+      <main className="bg-cover bg-no-repeat flex flex-col items-center mt-24">
         <div className="absolute top-0 left-0 w-full -z-10 ">
           <div className="custom-clip-path w-screen bg-white/10"></div>
         </div>
@@ -60,7 +60,7 @@ export default function ReportSubmitted() {
             us reach our goal by submitting a new report whenever you encounter
             any marine debris.
           </p>
-          <ProgressBar now={3} label={`${3}%`} className="shadow-md mx-auto my-4 max-w-[600px]"/>
+          <ProgressBar now={10} label={`${10}%`} className="shadow-md mx-auto my-4 max-w-[600px]"/>
 
           <Link
             href="/"

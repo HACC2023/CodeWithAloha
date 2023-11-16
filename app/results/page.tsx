@@ -193,13 +193,20 @@ export default function ResultsPage() {
   return (
     <div className="h-fit custom-background">
       <Navbar />
-      <div className="flex justify-center items-center text-center w-full">
+      <div className="flex justify-center items-center text-center w-full mt-24 mb-12">
         <h1 className="text-2xl xl:text-4xl font-extrabold text-white">
-          Results Page
+          Reports and stats
         </h1>
       </div>
+
+      <h2 className="font-semibold text-xl ml-[10%] text-white mb-2">
+        Last reports locations
+      </h2>
       <center>
-        <div className="p-6" style={{ height: "600px", width: "80%" }}>
+        <div
+          className="rounded-md border-4 border-white shadow-xl"
+          style={{ height: "600px", width: "80%" }}
+        >
           <GoogleMapReact
             bootstrapURLKeys={{
               key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
@@ -220,10 +227,10 @@ export default function ResultsPage() {
         </div>
       </center>
 
-      <div className="flex justify-around">
-        <div className="flex flex-col w-1/3 mb-12 chart-background">
-          <h2 className="text-white text-2xl justify-center m-auto">
-            % Debris Type
+      <div className="flex flex-row items-center justify-between max-w-[80%]  mx-auto mt-24">
+        <div className="flex flex-col w-[400px] p-8 mb-12 chart-background rounded-md">
+          <h2 className="text-white text-2xl justify-center font-semibold m-auto mb-6">
+            Debris Type Percentage
           </h2>
           <ResponsiveContainer width="100%" height={400}>
             <PieChart>
@@ -249,9 +256,9 @@ export default function ResultsPage() {
             </PieChart>
           </ResponsiveContainer>
         </div>
-        <div className="flex flex-col w-1/3 mb-12 chart-background">
+        <div className="flex flex-col w-[400px] p-8 mb-12 chart-background">
           <h2 className="text-white text-2xl justify-center m-auto">
-            % Fishing Gear vs Other
+            Fishing Gear vs Other
           </h2>
           <ResponsiveContainer width="100%" height={400}>
             <PieChart>
@@ -278,14 +285,15 @@ export default function ResultsPage() {
           </ResponsiveContainer>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col w-1/3 mr-2 mb-12">
-          <h2 className="text-white text-2xl justify-center m-auto">
+      <div className="flex flex-col  items-center justify-center mt-24">
+        <div className="flex flex-col w-[800px] mx-2 mb-24">
+          <h2 className="text-white mb-6 font-semibold text-2xl justify-center m-auto">
             Marine Debris by Type
           </h2>
           <ResponsiveContainer
             width="100%"
             height={400}
+          
             style={{ backgroundColor: "#edf6f9", marginRight: "1em" }}
           >
             <BarChart data={debrisByTypeData}>
