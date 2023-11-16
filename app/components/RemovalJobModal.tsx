@@ -96,7 +96,7 @@ function RemovalJobModal({ onSubmit, onClose, job }: RemovalJobModalProps) {
         <label className="text-black w-full" htmlFor="name">
           Please add further details about the removed debris
         </label>
-        <div className="form-group flex flex-row items-center gap-4 w-fit">
+        <div className="form-group flex flex-row items-center gap-4 w-fit text-black">
           <label htmlFor="text">Debris Approx Size (in kgs):</label>
           <input
             className="text-black "
@@ -107,7 +107,7 @@ function RemovalJobModal({ onSubmit, onClose, job }: RemovalJobModalProps) {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group flex flex-row items-start justify-center gap-4 w-fit">
+        <div className="form-group flex flex-row items-start justify-center text-black gap-4 w-fit">
           <label htmlFor="text">Environmental Damage:</label>
           <textarea
             id="environmentalDamage"
@@ -119,7 +119,7 @@ function RemovalJobModal({ onSubmit, onClose, job }: RemovalJobModalProps) {
         </div>
         {/* ______________________DEBRIS TYPE_______________________ */}
         <div className="form-group flex flex-row items-start 
-        whitespace-nowrap gap-[52px]">
+        whitespace-nowrap gap-[52px] text-black">
           <label htmlFor="debrisType">Debris Type:</label>
           <select
             id="debrisType"
