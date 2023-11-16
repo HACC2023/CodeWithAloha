@@ -45,6 +45,7 @@ function RemovalJobModal({ onSubmit, onClose, job }: RemovalJobModalProps) {
     form.append("environmentalDamage", formData.environmentalDamage);
     form.append("debrisApproxSize", formData.debrisApproxSize);
     form.append("status", "removed");
+    form.append("removalDate", new Date(Date.now()).toDateString());
 
     // Example: send formData to the server
     try {

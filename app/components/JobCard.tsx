@@ -36,6 +36,8 @@ interface JobCardProps {
   setJobSelected: (jobId: string) => void;
   setIsModalOpen: (isOpen: boolean) => void;
   btnMessage: string;
+  removalCompany?: string;
+  lastUpdateDate?: string;
 }
 
 function JobCard({
@@ -45,7 +47,9 @@ function JobCard({
   claimed,
   setJobSelected,
   setIsModalOpen,
-  btnMessage
+  btnMessage,
+  removalCompany,
+  lastUpdateDate
 }: JobCardProps) {
   const data = claimed ? claimedJob : job;
   if (!data) {
@@ -190,13 +194,17 @@ function JobCard({
               />
               <p>{status}</p>
             </div>
-            <p className="text-black font-semibold">
-              Claiming Company:{" "}
-              <span className="font-normal">claimingCompany</span>
-            </p>
+            {
+              removalCompany && (
+                <p className="text-black font-semibold">
+                  Claiming Company:{" "}
+                  <span className="font-normal">{removalCompany}</span>
+                </p>
+              )
+            }
 
             <p className="text-black font-semibold">
-              Last Update: <span className="font-normal">lastUpdateDate</span>
+              Last Update: <span className="font-normal">{lastUpdateDate}</span>
             </p>
           </div>
         </div>
