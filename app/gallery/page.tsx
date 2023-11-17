@@ -78,11 +78,15 @@ export default function GalleryPage() {
     <div className="h-fit custom-background">
       <Navbar />
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Gallery</h1>
+        <h1 className="text-4xl font-bold mb-4">Gallery</h1>
         <div className="grid grid-cols-3 gap-4">
           {galleryItems.map((item, index) => (
             <a key={index} href={item.imageURL} target="_blank">
-              <div key={index} className="border rounded-lg p-2">
+              <div
+                key={index}
+                className="text-white border bg-white-500/75 rounded-lg p-2"
+              >
+                <h1 className="text-xl font-semibold p-2">{item.title}</h1>
                 <Image
                   src={item.imagePath}
                   height={330}
@@ -90,8 +94,7 @@ export default function GalleryPage() {
                   alt={item.title}
                   className="w-full h-auto"
                 />
-                <h2 className="text-lg font-semibold">{item.title}</h2>
-                <p>{item.description}</p>
+                <p className="p-2">{item.description}</p>
               </div>
             </a>
           ))}
