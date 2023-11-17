@@ -111,6 +111,17 @@ const Navbar: React.FC = () => {
           </li>
           <li className="relative group">
             <a
+              href="/gallery"
+              target="_blank"
+              className="text-white hover:shadow-lg pb-2
+            hover:font-bold transition-all ease-in text-sm
+         "
+            >
+              Gallery
+            </a>
+          </li>
+          <li className="relative group">
+            <a
               href="https://www.hpu.edu/about-us/index.html"
               target="_blank"
               className="text-white hover:shadow-lg pb-2
@@ -127,7 +138,7 @@ const Navbar: React.FC = () => {
             hover:font-bold transition-all ease-in text-sm
          "
             >
-            Form
+              Form
             </a>
           </li>
           {/* Conditional Login Links */}
